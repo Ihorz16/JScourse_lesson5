@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h3>Задача 13</h3>
+	<p>Морський бій. Комп’ютер випадково розташовує одиночний корабель на полі розміром N*M. Маючи К снарядів користувач
+		намагається потопити корабель.</p>
+	<script>
+		const length = parseInt(prompt('Введіть довжину поля'))
+		const numberShots = parseInt(prompt('Введіть кількість снарядів'))
+		const randomN = Math.floor(Math.random() * length) + 1
+		const randomM = Math.floor(Math.random() * length) + 1
+		let userN
+		let userM
+		for (let i = 1; i <= numberShots; i++) {
+			userN = parseInt(prompt(`${i} спроба. Задайте координату N`))
+			userM = parseInt(prompt(`${i} спроба. Задайте координату M`))
+			if (userN === randomN && userM === randomM) {
+				document.write('Ви влучили в корабель!')
+				break
+			} else if (i === numberShots)
+				document.write('Ви не влучили у корабель')
+		}
+
+	</script>
+
+
+</body>
+
+</html>

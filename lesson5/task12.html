@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h3>Задача 12</h3>
+	<p>Ігровий автомат. Випадково вибираємо зображення у 3 позиціях. Вибір у кожній позиції вибирається як одне з чотирьох
+		зображень. Вивести ці зображення і повідомити виграш користувача (три перших зображення 100 грн, три других – 200,
+		три
+		третіх – 500, три четвертих зображення – 1000грн). Використати цикли і switch (для вибору зображення за номером).
+	</p>
+	<h1>Ігровий автомат</h1>
+	<h3>3 кавуна 100грн</h3>
+	<h3>3 вишні 200грн</h3>
+	<h3>3 яблука 500грн</h3>
+	<h3>3 лимона 1000грн</h3>
+
+	<script>
+		// Вводимо необхідні дані
+		document.write(`<div style='display: flex; margin-top: 10px; gap: 10px'>`)
+		const watermelon = (`<img src='../image/1.png'>`)
+		const cherry = (`<img src='../image/2.png'>`)
+		const apple = (`<img src='../image/3.png'>`)
+		const lemon = (`<img src='../image/4.png'>`)
+
+		const win_1 = 100
+		const win_2 = 200
+		const win_3 = 500
+		const win_4 = 1000
+
+		let counter_1 = 0
+		let counter_2 = 0
+		let counter_3 = 0
+		let counter_4 = 0
+		let result
+
+		// Знаходимо необхідні дані
+		for (let i = 0; i < 3; i++) {
+			let randomSlotsFruits = Math.floor(Math.random() * 4) + 1
+			switch (randomSlotsFruits) {
+				case 1: result = watermelon
+					break;
+				case 2: result = cherry
+					break;
+				case 3: result = apple
+					break;
+				case 4: result = lemon
+					break;
+				default:
+					break;
+			}
+			if (result === watermelon)
+				counter_1++
+			if (result === cherry)
+				counter_2++
+			if (result === apple)
+				counter_3++
+			if (result === lemon)
+				counter_4++
+			document.write(`${result}<br>`)
+		}
+		// Виведення результату
+		if (counter_1 === 3)
+			document.write(`<h2>Ви виграли ${win_1}грн</h2><br>`)
+		if (counter_2 === 3)
+			document.write(`<h2>Ви виграли ${win_2}грн</h2><br>`)
+		if (counter_3 === 3)
+			document.write(`<h2>Ви виграли ${win_3}грн</h2><br>`)
+		if (counter_4 === 3)
+			document.write(`<h2>Ви виграли ${win_4}грн</h2><br>`)
+
+	</script>
+</body>
+
+</html>
